@@ -68,6 +68,7 @@ fun IncomingCallScreen(
                 Button(
                     onClick = {
                         ringtone?.stop()
+                        callViewModel.cancelIncomingCallTimeout()
                         callViewModel.clearIncomingOffer()
                         navController.navigate("video_call/$roomId/$callType/false")
                     },
@@ -81,6 +82,7 @@ fun IncomingCallScreen(
                 Button(
                     onClick = {
                         ringtone?.stop()
+                        callViewModel.cancelIncomingCallTimeout()
                         callViewModel.stopListeningForIncomingOffers()
                         callViewModel.clearIncomingOffer()
                         Toast.makeText(context, "Call Rejected", Toast.LENGTH_SHORT).show()
