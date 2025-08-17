@@ -44,6 +44,7 @@ fun CallScreen(
 
 
     DisposableEffect(Unit) {
+        callViewModel.cancelIncomingCallTimeout()
         // Set Z order to overlay (needed for video rendering stacking)
         viewModel.remoteVideoView.setZOrderMediaOverlay(true)
         viewModel.localVideoView.setZOrderMediaOverlay(true)
